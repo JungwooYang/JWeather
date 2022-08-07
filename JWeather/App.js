@@ -72,10 +72,14 @@ export default function App() {
         ) : (
           days.map((day, index) => (
             <View key={index} style={styles.day}>
+              <Fontisto
+                name={icons[day.weather[0].main]}
+                size={100}
+                color="gold"
+              />
               <Text style={styles.temperature}>
                 {parseFloat(day.temp.day).toFixed(1)}
               </Text>
-              <Text style={styles.description}>{day.weather[0].main}</Text>
               <Text style={styles.tinyText}>{day.weather[0].description}</Text>
             </View>
           ))
@@ -95,7 +99,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    fontSize: 20,
+    marginBottom: 50,
   },
   cityName: {
     fontSize: 56,
@@ -108,9 +112,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   temperature: {
-    marginTop: 70,
+    marginTop: 50,
     fontWeight: "600",
-    fontSize: 160,
+    fontSize: 120,
     color: "gold",
   },
   description: {
@@ -118,7 +122,7 @@ const styles = StyleSheet.create({
     color: "gold",
   },
   tinyText: {
-    fontSize: 20,
+    fontSize: 32,
     color: "gold",
   },
 });
